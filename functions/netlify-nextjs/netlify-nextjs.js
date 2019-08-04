@@ -140,7 +140,8 @@ const path = require("path")
 
 exports.handler = (event, context, callback) => {
   const firstchunk = event.path.split("/")[1]
-  const renderpath = "./" + path.join("./pages", firstchunk === "" ? "/index.js" : firstchunk + ".js")
+  console.log('[firstchunk]', firstchunk);
+  let renderpath = "./" + path.join("./pages", firstchunk === "" ? "/index.js" : firstchunk + ".js")
   console.log("[render] ", renderpath)
   // let potato
   // if (fs.existsSync(renderpath)) potato = renderpath
